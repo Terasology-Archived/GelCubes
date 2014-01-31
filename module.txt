@@ -1,0 +1,9 @@
+{
+    "id" : "GelCubes",
+    "version" : "0.1.0",
+    "author" : "Begla, Cervator",
+    "displayName" : "GelCubes",
+    "description" : "Contains cuddly little Gelatinous Cubes just waiting to bounce around merrily in the world!",
+    "dependencies" : [],
+    "isServerSideOnly" : false
+}
