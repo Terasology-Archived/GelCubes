@@ -21,11 +21,10 @@ import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.prefab.Prefab;
 import org.terasology.logic.location.LocationComponent;
+import org.terasology.math.geom.Vector3f;
 import org.terasology.rendering.logic.MeshComponent;
+import org.terasology.rendering.nui.Color;
 import org.terasology.utilities.random.FastRandom;
-
-import javax.vecmath.Color4f;
-import javax.vecmath.Vector3f;
 
 /**
  * Factory for generating Gelatinous Cubes.
@@ -73,9 +72,9 @@ public class GelCubeFactory {
 
             logger.info("Creating a {} with color {} - if default/black then will overwrite with a random color", prefab.getName(), mesh.color);
             // For uninitialized (technically black) GelCubes we just come up with a random color. Well, small list. For now.
-            if (mesh.color.equals(new Color4f(0, 0, 0, 1))) {
+            if (mesh.color.equals(new Color(0, 0, 0, 1))) {
                 int colorId = Math.abs(random.nextInt()) % COLORS.length;
-                mesh.color.set(COLORS[colorId].x, COLORS[colorId].y, COLORS[colorId].z, 1.0f);
+                mesh.color = new Color(COLORS[colorId].x, COLORS[colorId].y, COLORS[colorId].z, 1.0f);
                 entity.saveComponent(mesh);
             }
         } else {
